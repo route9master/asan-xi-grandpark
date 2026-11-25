@@ -1,0 +1,75 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-offwhite text-navy font-sans antialiased;
+    font-feature-settings: "tnum" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* 한글 단어가 음절 중간에서 끊기지 않도록 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    @apply bg-gold/20 text-navy;
+  }
+}
+
+@layer components {
+  /* ── 레이아웃 ─────────────────────────────── */
+  .section-pad {
+    @apply py-[72px] md:py-[120px];
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-6 md:px-10;
+  }
+
+  /* ── 타이포 스케일 (3단계) ─────────────────── */
+  /* 1) 오버라인: 영문 라벨 — SemiBold + 좁은 자간(묵직하게) */
+  .overline {
+    @apply text-[12px] font-semibold uppercase tracking-[0.13em] text-gold;
+  }
+
+  /* 2) 제목 — Bold, 자간 살짝 좁게 */
+  .t-title {
+    @apply text-[30px] font-bold leading-[1.2] tracking-tightest md:text-[46px];
+    text-wrap: balance;
+  }
+
+  /* 3) 리드(부제) — Medium */
+  .t-lead {
+    @apply max-w-[40ch] text-[19px] font-medium leading-[1.65] md:text-[22px];
+    text-wrap: pretty;
+  }
+
+  /* 본문/섹션 리드 — Medium (가독성 위해 크게) */
+  .t-body {
+    @apply max-w-[46ch] text-[17px] font-medium leading-[1.7] text-navy/70 md:text-[19px];
+    text-wrap: pretty;
+  }
+
+  /* 캡션(법적 고지 등) — Medium */
+  .t-caption {
+    @apply max-w-[66ch] text-[14px] font-medium leading-[1.65] text-navy/50 md:text-[15px];
+    text-wrap: pretty;
+  }
+
+  /* flat CTA */
+  .btn-flat {
+    @apply inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 text-[15px] font-semibold tracking-tight text-dark transition-colors hover:bg-[#9d7c4b];
+  }
+
+  .btn-line {
+    @apply inline-flex items-center justify-center gap-2 border border-navy/20 px-8 py-4 text-[15px] font-semibold tracking-tight text-navy transition-colors hover:border-navy hover:bg-navy hover:text-offwhite;
+  }
+}
