@@ -45,7 +45,7 @@ export function PromoPopup() {
           ×
         </button>
         <img
-          src="/images/promo-popup.png"
+          src="/images/promo-popup-v2.png"
           alt="분양 조건 안내"
           onClick={goContact}
           className="w-full cursor-pointer rounded-t-lg object-contain"
